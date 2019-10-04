@@ -6,14 +6,15 @@ class App extends Component {
     super();
 
     this.state = {
-      valueForm: "",
+      valueForm:"",
       numberForm: 0,
     }
   }
   render() {
-    return ( <div className = "container" >
-      <textarea rows = "3" value = { this.state.valueForm } onChange = { this.updateValueForm.bind(this)} > </textarea> 
-      <div className = "counter" > { this.state.numberForm} </div> 
+    return ( 
+      <div className="container">
+        <textarea rows="3" value={this.state.valueForm} onChange={this.updateValueForm.bind(this)}> </textarea> 
+        <div className="counter"> {this.state.numberForm}</div> 
       </div>
     );
   }
