@@ -2,27 +2,24 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    this.state = { length: 0 }
+  };
 
-    this.state = {
-      valueForm:"",
-      numberForm: 0,
-    }
+
+  counter(event) {
+    this.setState({
+      length: event.target.value.length
+    });
   }
   render() {
-    return ( 
+    return (
       <div className="container">
-        <textarea rows="3" value={this.state.valueForm} onChange={this.updateValueForm.bind(this)}> </textarea> 
-        <div className="counter"> {this.state.numberForm}</div> 
+        <textarea rows="3" onChange={this.counter.bind(this)}></textarea>
+        <div className="counter">{this.state.length}</div>
       </div>
     );
-  }
-  updateValueForm(event) {
-    this.setState({
-      valueForm: event.target.value,
-      numberForm: event.target.value.length
-    })
   }
 }
 
